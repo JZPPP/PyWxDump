@@ -203,7 +203,7 @@ class MainDecrypt(BaseSubMainClass):
             print(f"[+] 创建输出文件夹：{out_path}")
 
         # 调用 decrypt 函数，并传入参数
-        result = batch_decrypt(key, db_path, out_path, True)
+        result = decrypt_merge(key, db_path, out_path)
         return result
 
 
