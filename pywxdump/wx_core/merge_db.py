@@ -337,6 +337,7 @@ def decrypt_merge(wx_path: str, key: str, outpath: str = "",
     :param db_type: 数据库类型，从核心数据库中选择
     :return: (true,解密后的数据库路径) or (false,错误信息)
     """
+    print(wx_path, key, outpath, merge_save_path, is_merge_data, is_del_decrypted, startCreateTime, endCreateTime, db_type)
     if db_type is None:
         db_type = []
 

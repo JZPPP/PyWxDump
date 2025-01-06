@@ -198,11 +198,12 @@ class MainDecrypt(BaseSubMainClass):
             print(f"[-] 数据库路径不存在：{db_path}")
             return
 
-        if not os.path.exists(out_path):
-            os.makedirs(out_path)
-            print(f"[+] 创建输出文件夹：{out_path}")
+        # if not os.path.exists(out_path):
+        #     os.makedirs(out_path)
+        #     print(f"[+] 创建输出文件夹：{out_path}")
 
         # 调用 decrypt 函数，并传入参数
+        print(f"[*] 解密中...")
         result = decrypt_merge(key, db_path, out_path)
         return result
 
