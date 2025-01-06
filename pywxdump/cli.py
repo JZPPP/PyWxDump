@@ -175,7 +175,7 @@ class MainDecrypt(BaseSubMainClass):
         # 添加 'decrypt' 子命令解析器
         parser.add_argument("-k", "--key", type=str, help="密钥", required=True, metavar="")
         parser.add_argument("-i", "--db_path", type=str, help="数据库路径(目录or文件)", required=True, metavar="")
-        parser.add_argument("-o", "--out_path", type=str, default=os.path.join(os.getcwd(), "decrypted"),
+        parser.add_argument("-o", "--out_path", type=str, default=os.path.join(os.getcwd()),
                             help="输出路径(必须是目录)[默认为当前路径下decrypted文件夹]", required=False,
                             metavar="")
         return parser
@@ -197,7 +197,7 @@ class MainDecrypt(BaseSubMainClass):
 
         # 调用 decrypt 函数，并传入参数
         print(f"[*] 解密中...")
-        result = decrypt_merge(key, db_path, out_path)
+        result = decrypt_merge(db_path,key,out_path)
         return result
 
 
