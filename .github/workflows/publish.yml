@@ -8,7 +8,7 @@ on:
 
 jobs:
   publish:
-    name: Publish Pypi and Create Release
+    name: Create Release
     if: github.repository == 'JZPPP/PyWxDump' # 仅在指定仓库的 tag 触发工作流程
     # 此作业在 Linux 上运行
     runs-on: windows-latest
@@ -116,7 +116,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref.tag }}
           body: |
             [Auto Release] Update PyWxDump to ${{ github.ref }}
             详细更新日志请查看 [CHANGELOG.md](https://github.com/xaoyaoo/PyWxDump/blob/master/doc/CHANGELOG.md)
