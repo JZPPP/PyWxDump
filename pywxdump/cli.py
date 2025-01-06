@@ -13,14 +13,7 @@ import json
 from pywxdump import *
 import pywxdump
 
-wxdump_ascii = r"""
-██████╗ ██╗   ██╗██╗    ██╗██╗  ██╗██████╗ ██╗   ██╗███╗   ███╗██████╗ 
-██╔══██╗╚██╗ ██╔╝██║    ██║╚██╗██╔╝██╔══██╗██║   ██║████╗ ████║██╔══██╗
-██████╔╝ ╚████╔╝ ██║ █╗ ██║ ╚███╔╝ ██║  ██║██║   ██║██╔████╔██║██████╔╝
-██╔═══╝   ╚██╔╝  ██║███╗██║ ██╔██╗ ██║  ██║██║   ██║██║╚██╔╝██║██╔═══╝ 
-██║        ██║   ╚███╔███╔╝██╔╝ ██╗██████╔╝╚██████╔╝██║ ╚═╝ ██║██║     
-╚═╝        ╚═╝    ╚══╝╚══╝ ╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝     
-"""
+wxdump_ascii = r"wxdump: 微信数据库解密工具"
 PYWXDUMP_VERSION = pywxdump.__version__
 
 models = {}
@@ -36,7 +29,7 @@ def create_parser():
             wxdump_line = '\n'.join([f'\033[36m{line:^{line_len}}\033[0m' for line in wxdump_ascii.split('\n') if line])
             first_line = f'\033[36m{" PyWxDump v" + PYWXDUMP_VERSION + " ":=^{line_len}}\033[0m'
             brief = 'PyWxDump功能：获取账号信息、解密数据库、查看聊天记录、导出聊天记录为html等'
-            other = '更多详情请查看: \033[4m\033[1mhttps://github.com/xaoyaoo/PyWxDump\033[0m'
+            other = '更多详情请查看: \033[4m\033[1mhttps://github.com/JZPPP/PyWxDump\033[0m'
 
             separator = f'\033[36m{" options ":-^{line_len}}\033[0m'
 
